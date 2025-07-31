@@ -1,4 +1,3 @@
-
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
@@ -8,8 +7,8 @@ import Footer from "./components/Footer";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Harmonify",
-  description: "Generate music from chords",
+  title: "Music Score App",
+  description: "A music score editor in your browser",
 };
 
 export default function RootLayout({
@@ -19,11 +18,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.className} bg-gray-900 text-white`}>
+      <body className={`${inter.className} bg-gray-100`}>
         <Header />
-        <main className="container mx-auto p-4">{children}</main>
+        <main className="container mx-auto px-4 py-8">{children}</main>
         <Footer />
       </body>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/15.2.7/Tone.min.js" strategy="beforeInteractive"></script>
+      <script src="/tonejs-instruments/SampleLibrary.js" strategy="beforeInteractive"></script>
     </html>
   );
 }

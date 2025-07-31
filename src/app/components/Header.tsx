@@ -1,11 +1,20 @@
+import Link from "next/link";
 
-import React from 'react';
-
-const Header: React.FC = () => {
+const Header = () => {
   return (
-    <header className="bg-gray-800 text-white p-4">
-      <div className="container mx-auto">
-        <h1 className="text-2xl font-bold">Harmonify</h1>
+    <header className="bg-surface shadow-md">
+      <div className="container mx-auto px-4 py-4 flex justify-between items-center">
+        <Link href="/" className="text-2xl font-bold text-primary">
+          Music Score App
+        </Link>
+        <nav>
+          <Link href="/" className="text-on-surface hover:text-primary px-4">
+            Home
+          </Link>
+          <Link href="/about" className="text-on-surface hover:text-primary px-4">
+            About
+          </Link>
+        </nav>
       </div>
     </header>
   );
